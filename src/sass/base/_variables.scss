@@ -1,0 +1,117 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/mixins";
+// @import "~bootstrap/scss/variables";
+// @import "~bootstrap/scss/utilities";
+@import "../base/functions";
+
+$enable-negative-margins: true;
+$enable-important-utilities: false;
+
+$theme-colors: (
+  "primary": #e1be00,
+  "secondary": #0b5377,
+  // #187bae
+  "secondary-300": #4395be,
+  "info": #797979,
+  "success": #198754,
+  "warning": orange,
+  "danger": #e10000,
+  "black": #28293d,
+  "blue": #2e5bff,
+  "warm-blue": #2954a1,
+  "lightblue": #e0e7ff,
+  "gray": #f3f3f3,
+  "gray2": #f7f7f7,
+  "gray3": #f9f9f9,
+  "gray4": #e8e8e8,
+  "gray5": #dadada,
+  "gray6": #c6c6c6,
+  "gray7": #797979,
+  "star": #e6ca35,
+  "discord": #5865f2,
+  "dark": #3d3d3d,
+  "dark2": #1d1d1d,
+  "dark3": #3e3e3e,
+  "facebook": #3e5c9a,
+  "google": #df4b38,
+  "transparent": #00000000,
+  "white": #ffffff,
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$border-radius-list: (
+  "xs": 5px,
+  "sm": 8px,
+  "md": 12px,
+  "lg": 24px,
+  "xl": 40px,
+  "xxl": 50px,
+);
+
+$headings-font-sizes: (
+  1: 40px,
+  2: 30px,
+  3: 27px,
+  4: 21px,
+  5: 18px,
+  6: 16px,
+);
+
+$body-font-sizes: (
+  1: 16px,
+  2: 14px,
+  3: 12px,
+);
+
+$font-weights: (
+  "lighter": 100,
+  "light": 300,
+  "normal": 1200,
+  "bold": 700,
+  "bolder": 900,
+);
+
+// Font weights
+$font-weight-lighter: 100;
+$font-weight-light: 300;
+$font-weight-normal: 500;
+$font-weight-bold: 700;
+$font-weight-bolder: 900;
+
+// Heights
+$header-mobile-height: 140px;
+$mobile-bottom-nav-height: 70px;
+
+@each $name, $size in $headings-font-sizes {
+  .h#{$name} {
+    font-size: calc($size * 0.75);
+  }
+}
+
+@each $name, $size in $body-font-sizes {
+  .body#{$name} {
+    font-size: calc($size * 0.75);
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  @each $name, $size in $headings-font-sizes {
+    .h#{$name} {
+      font-size: calc($size * 1);
+    }
+  }
+
+  @each $name, $size in $body-font-sizes {
+    .body#{$name} {
+      font-size: calc($size * 1);
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@function theme-color($key) {
+  @return map-get($theme-colors, $key);
+}
+
+@function theme-color-opacity($key, $opacity: 1) {
+  @return rgba(map-get($theme-colors, $key), $opacity);
+}
+
+@function border-radius-end($key, $rtl: false) {
+  @if $rtl {
+    @return map-get($border-radius-list, $key) 0 0
+      map-get($border-radius-list, $key);
+  } @else {
+    @return 0 map-get($border-radius-list, $key)
+      map-get($border-radius-list, $key) 0;
+  }
+}
+
+@function border-radius-start($key, $rtl: false) {
+  @if $rtl {
+    @return 0 map-get($border-radius-list, $key)
+      map-get($border-radius-list, $key) 0;
+  } @else {
+    @return map-get($border-radius-list, $key) 0 0
+      map-get($border-radius-list, $key);
+  }
+}
+
+@function border-radius-top($key) {
+  @return map-get($border-radius-list, $key) map-get($border-radius-list, $key)
+    0 0;
+}
+
+@function border-radius-bottom($key) {
+  @return 0 0 map-get($border-radius-list, $key)
+    map-get($border-radius-list, $key);
+}
+
+@function border-radius-single($key, $rtl: false) {
+  @return map-get($border-radius-list, $key);
+}
