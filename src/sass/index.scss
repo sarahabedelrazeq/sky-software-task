@@ -9,3 +9,44 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 @import "./bootstrap-override";
+
+.reports-card .card-header {
+    border-radius: 0 !important;
+}
+
+.container {
+    min-width: calc(100vw - 80px) !important;
+    width: calc(100vw - 80px) !important;
+    max-width: calc(100vw - 80px) !important;
+}
+
+.table-pagination-item {
+    .page-link {
+        border-radius: 2px !important;
+        border-width: 0 !important;
+        padding: 0 8px;
+        color: inherit !important;
+    }
+
+    &.active .page-link {
+        border-radius: 2px !important;
+        border-width: 1px !important;
+        background-color: transparent;
+        border-color: theme-color("primary");
+
+    }
+}
+
+.nav-tabs {
+    .nav-item {
+        .underline-active-tap.active,
+        .underline-active-tap:hover {
+            border: 0px;
+
+            p {
+
+                border-bottom: 2px solid theme-color("primary") !important;
+            }
+        }
+    }
+}

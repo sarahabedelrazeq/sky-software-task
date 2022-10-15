@@ -1,0 +1,18 @@
+[
+  {
+    "id": 62541,
+    "name": "INN TOURS & TRAVEL",
+    "address": "Amman, Jordan, PO Box 123456",
+    "contact": ["Ali Omar", "example@email.com", "+962 790000000"],
+    "limit": 10000,
+    "balance": 24200
+  },
+  {
+    "id": 62541,
+    "name": "INN TOURS & TRAVEL",
+    "address": "Amman, Jordan, PO Box 123456",
+    "contact": ["Ali Omar", "example@email.com", "+962 790000000"],
+    "limit": 10000,
+    "balance": 24200
+  }
+]

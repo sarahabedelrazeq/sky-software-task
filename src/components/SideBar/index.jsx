@@ -11,7 +11,7 @@ export default function SideBar({
 }) {
   return (
     <div className={`d-${hiddenOn}-none`}>
-      <Row >
+      <Row>
         <Col xl={12} lg={12} md={12} sm={12} xs={12}>
           <Button
             variant="none"
@@ -21,7 +21,7 @@ export default function SideBar({
             {icon}
           </Button>
 
-          <Offcanvas show={show} onHide={setShow} placement="end" scroll >
+          <Offcanvas show={show} onHide={setShow} placement="end" scroll>
             <Offcanvas.Header closeButton>
               <Offcanvas.Title>{title}</Offcanvas.Title>
             </Offcanvas.Header>

@@ -1,3 +1,4 @@
 import Home from "./Home"
+import CompanyProfiles from "./CompanyProfiles"
 
-export { Home }
+export { Home, CompanyProfiles }

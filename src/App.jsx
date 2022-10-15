@@ -11,6 +11,18 @@ const routes = [
     name: "Home",
     component: React.lazy(() => import("pages/Home")),
   },
+  {
+    path: "/company-profiles",
+    exact: true,
+    name: "CompanyProfiles",
+    component: React.lazy(() => import("pages/CompanyProfiles")),
+  },
+  {
+    path: "/company-profile/:company",
+    exact: true,
+    name: "CompanyProfile",
+    component: React.lazy(() => import("pages/CompanyProfile")),
+  },
 ];
 
 function App() {
@@ -18,7 +30,7 @@ function App() {
   const theme = useTheme();
 
   React.useLayoutEffect(() => {
-    document.documentElement.setAttribute("lang", language.lang);
+    document.documentElement.setAttribute("lang", language.direction);
     document.documentElement.setAttribute("dir", language.direction);
     document.documentElement.setAttribute("class", "theme-" + theme.name);
   }, [language, theme]);

@@ -18,7 +18,7 @@ import app from "./app";
 const appReducerFilter = createFilter("app", ["language", "theme"]);
 
 const persistConfig = {
-  key: "sarah_abed_elrazeq_portfolio",
+  key: "sky_software_task",
   whitelist: ["app"],
   storage,
   transforms: [appReducerFilter],
