@@ -11,7 +11,7 @@ import {
 import { Link } from "react-router-dom";
 
 export default function CompaniesTable({ companies }) {
-  const [limit, setLimit] = React.useState(20);
+  const [limit, setLimit] = React.useState(5);
   const [page, setPage] = React.useState(1);
   const [pagesCount, setPagesCount] = React.useState(1);
 
@@ -93,6 +93,13 @@ export default function CompaniesTable({ companies }) {
           <Col xs={6}>
             <Pagination>
               <Pagination.Item
+                active={limit === 5}
+                onClick={() => setLimit(5)}
+                className="table-pagination-item text-black"
+              >
+                5
+              </Pagination.Item>
+              <Pagination.Item
                 active={limit === 20}
                 onClick={() => setLimit(20)}
                 className="table-pagination-item text-black"
@@ -105,13 +112,6 @@ export default function CompaniesTable({ companies }) {
                 className="table-pagination-item text-black"
               >
                 50
-              </Pagination.Item>
-              <Pagination.Item
-                active={limit === 100}
-                onClick={() => setLimit(100)}
-                className="table-pagination-item text-black"
-              >
-                100
               </Pagination.Item>
             </Pagination>
           </Col>
@@ -132,18 +132,36 @@ export default function CompaniesTable({ companies }) {
               >
                 <ChevronLeft />
               </Pagination.Item>
-              {Array(pagesCount)
-                .fill(0)
-                .map((_, index) => (
+              {pagesCount <= 5 ? (
+                Array(pagesCount)
+                  .fill(0)
+                  .map((_, index) => (
+                    <Pagination.Item
+                      active={index === page - 1}
+                      className="table-pagination-item text-black"
+                      onClick={() => setPage(index + 1)}
+                      key={index}
+                    >
+                      {index + 1}
+                    </Pagination.Item>
+                  ))
+              ) : (
+                <>
+                  {page !== 1 && (
+                    <Pagination.Ellipsis className="table-pagination-item text-black" disabled />
+                  )}
                   <Pagination.Item
-                    active={index === page - 1}
+                    active
                     className="table-pagination-item text-black"
-                    onClick={() => setPage(index + 1)}
-                    key={index}
+                    onClick={() => setPage(page)}
                   >
-                    {index + 1}
+                    {page}
                   </Pagination.Item>
-                ))}
+                  {page !== pagesCount && (
+                    <Pagination.Ellipsis className="table-pagination-item text-black" disabled />
+                  )}
+                </>
+              )}
               <Pagination.Item
                 disabled={page === pagesCount}
                 className={classNames("table-pagination-item", {

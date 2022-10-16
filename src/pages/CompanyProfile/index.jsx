@@ -32,7 +32,7 @@ export default function CompanyProfile() {
                 <Tab
                   eventKey="profile"
                   tabClassName="underline-active-tap"
-                  title={<p className="px-5">Profile</p>}
+                  title={<p className="px-5 text-black">Profile</p>}
                 >
                   <div className="pt-3">
                     <Profile />
@@ -41,7 +41,7 @@ export default function CompanyProfile() {
                 <Tab
                   eventKey="invoices"
                   tabClassName="underline-active-tap"
-                  title={<p className="px-5">Invoices</p>}
+                  title={<p className="px-5 text-black">Invoices</p>}
                 >
                   <div className="pt-3">
                     <Invoices />

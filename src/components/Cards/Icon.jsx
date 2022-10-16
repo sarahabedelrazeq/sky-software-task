@@ -12,7 +12,7 @@ export default function Icon({ icon, title, text, count, link }) {
         </div>
         <div className="w-100">
           <div className="mb-2 position-relative">
-            <h6 className="fs-5">{title}</h6>
+            <h6 className="text-black fw-normal fs-5">{title}</h6>
             {count ? (
               <span className="position-absolute top end bg-red rounded-circle text-white px-1 fs-xs">
                 {count}

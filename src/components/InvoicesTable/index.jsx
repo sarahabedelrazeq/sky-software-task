@@ -5,13 +5,14 @@ import {
   CardList,
   ChevronLeft,
   ChevronRight,
+  Download,
   Flag,
-  Link as BootstrapLinkIcon,
+  Link45deg,
+  SendFill,
 } from "react-bootstrap-icons";
-import { Link } from "react-router-dom";
 
 export default function InvoicesTable({ invoices }) {
-  const [limit, setLimit] = React.useState(20);
+  const [limit, setLimit] = React.useState(5);
   const [page, setPage] = React.useState(1);
   const [pagesCount, setPagesCount] = React.useState(1);
 
@@ -106,10 +107,16 @@ export default function InvoicesTable({ invoices }) {
                     <td>
                       <ul className="d-flex list-unstyled gap-2 justify-content-end m-0 align-items-center">
                         <li>
-                          <BootstrapLinkIcon className="fs-4" />
+                          <Download className="fs-4" />
                         </li>
                         <li>
-                          <Flag className="fs-5" />
+                          <SendFill className="fs-5" />
+                        </li>
+                        <li>
+                          <Link45deg className="fs-4" />
+                        </li>
+                        <li>
+                          <Flag className="fs-4" />
                         </li>
                         <li>
                           <CardList className="fs-4" />
@@ -126,6 +133,13 @@ export default function InvoicesTable({ invoices }) {
           <Col xs={6}>
             <Pagination>
               <Pagination.Item
+                active={limit === 5}
+                onClick={() => setLimit(5)}
+                className="table-pagination-item text-black"
+              >
+                5
+              </Pagination.Item>
+              <Pagination.Item
                 active={limit === 20}
                 onClick={() => setLimit(20)}
                 className="table-pagination-item text-black"
@@ -138,13 +152,6 @@ export default function InvoicesTable({ invoices }) {
                 className="table-pagination-item text-black"
               >
                 50
-              </Pagination.Item>
-              <Pagination.Item
-                active={limit === 100}
-                onClick={() => setLimit(100)}
-                className="table-pagination-item text-black"
-              >
-                100
               </Pagination.Item>
             </Pagination>
           </Col>
@@ -165,18 +172,42 @@ export default function InvoicesTable({ invoices }) {
               >
                 <ChevronLeft />
               </Pagination.Item>
-              {Array(pagesCount)
-                .fill(0)
-                .map((_, index) => (
+              {pagesCount <= 5 ? (
+                Array(pagesCount)
+                  .fill(0)
+                  .map((_, index) => (
+                    <Pagination.Item
+                      active={index === page - 1}
+                      className="table-pagination-item text-black"
+                      onClick={() => setPage(index + 1)}
+                      key={index}
+                    >
+                      {index + 1}
+                    </Pagination.Item>
+                  ))
+              ) : (
+                <>
+                  {page !== 1 && (
+                    <Pagination.Ellipsis
+                      disabled
+                      className="table-pagination-item text-black"
+                    />
+                  )}
                   <Pagination.Item
-                    active={index === page - 1}
+                    active
                     className="table-pagination-item text-black"
-                    onClick={() => setPage(index + 1)}
-                    key={index}
+                    onClick={() => setPage(page)}
                   >
-                    {index + 1}
+                    {page}
                   </Pagination.Item>
-                ))}
+                  {page !== pagesCount && (
+                    <Pagination.Ellipsis
+                      disabled
+                      className="table-pagination-item text-black"
+                    />
+                  )}
+                </>
+              )}
               <Pagination.Item
                 disabled={page === pagesCount}
                 className={classNames("table-pagination-item", {

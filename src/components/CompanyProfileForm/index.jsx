@@ -6,7 +6,7 @@ export default function CompanyProfileForm() {
     <div>
       <Form>
         <Row>
-          <Col xs={6}>
+          <Col sm={8} xs={7}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>A/R Number*</Form.Label>
               <Form.Control type="email" placeholder="The account number" />
@@ -40,7 +40,7 @@ export default function CompanyProfileForm() {
               <Form.Control type="number" placeholder="0" />
             </Form.Group>
           </Col>
-          <Col xs={6}>
+          <Col sm={4} xs={5}>
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Credit Limit (USD)</Form.Label>
               <Form.Control type="number" placeholder="0.00" />

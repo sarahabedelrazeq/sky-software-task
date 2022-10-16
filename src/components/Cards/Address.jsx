@@ -5,7 +5,7 @@ export default function Address({ title, address }) {
   return (
     <div>
       <Card style={{ width: "22rem" }}>
-        <Card.Header className="border-0">
+        <Card.Header className="border-0 mb-1">
           <div className="p-2">
             <h6 className="fs-5 fw-normal">{title}</h6>
           </div>

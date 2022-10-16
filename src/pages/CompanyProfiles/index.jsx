@@ -24,12 +24,12 @@ export default function CompanyProfiles() {
       <section>
         <Container>
           <Row className="justify-content-between g-4">
-            <Col xl={8} lg={8} xs={12}>
+            <Col xl={9} lg={8} xs={12}>
               <CompaniesTable companies={companies.data} />
             </Col>
             <Col xl={3} lg={4} xs={12} className="d-none d-lg-block">
               <Row className="g-4">
-                <Col xl={12} xs={6}>
+                <Col xs={12}>
                   <SidePanel.Actions
                     title="Due Follow-Up"
                     items={[
@@ -46,19 +46,17 @@ export default function CompanyProfiles() {
                     ]}
                   />
                 </Col>
-                <Col xl={12} xs={6}>
-                  <SidePanel.Actions
-                    title="Due Follow-Up"
+                <Col xs={12}>
+                  <SidePanel.Links
+                    title="Related Reports"
                     items={[
                       {
-                        name: "INN TOURS & TRAVEL",
-                        description: "Collect 50% of Anwar event invoice",
-                        date: " 01/02/2021 10:00 EST ",
+                        title: "Statements of Account",
+                        link: "/",
                       },
                       {
-                        name: "INN TOURS & TRAVEL",
-                        description: "Collect 50% of Anwar event invoice",
-                        date: " 01/02/2021 10:00 EST ",
+                        title: "Companies exceeding credit lim",
+                        link: "/",
                       },
                     ]}
                   />

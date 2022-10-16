@@ -1,4 +1,4 @@
-import { Cards, CompanyProfileForm } from "components";
+import { Cards, CompanyProfileForm, SidePanel } from "components";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -8,13 +8,13 @@ export default function Profile() {
     <div>
       <Row className="justify-content-between g-4">
         <Col lg={9} xs={12}>
-          <div className="bg-gray-3 p-3">
+          <div className="bg-gray-3 p-3 pb-4">
             <Row>
               <Col xs={12}>
                 <CompanyProfileForm />
               </Col>
-              <Col xs={12}>
-                <div className="mb-3">
+              <Col xs={12} className="mb-2">
+                <div className="mb-2">
                   <Link to="/" className="tex-blue">
                     + Add contact
                   </Link>
@@ -38,8 +38,8 @@ export default function Profile() {
                   </li>
                 </ul>
               </Col>
-              <Col xs={12}>
-                <div className="mb-3">
+              <Col xs={12} className="mb-2">
+                <div className="mb-2">
                   <Link to="/" className="tex-blue">
                     + Add address
                   </Link>
@@ -56,7 +56,45 @@ export default function Profile() {
             </Row>
           </div>
         </Col>
-        <Col xl={3} lg={4} xs={12} className="d-none d-lg-block"></Col>
+        <Col xl={3} lg={4} xs={12} className="d-none d-lg-block">
+          <Row className="g-4">
+            <Col xs={12}>
+              <SidePanel.Actions
+                title="Follow-Up"
+                items={[
+                  {
+                    name: "INN TOURS & TRAVEL",
+                    description: "Collect 50% of Anwar event invoice",
+                    date: " 01/02/2021 10:00 EST ",
+                  },
+                ]}
+              />
+            </Col>
+            <Col xs={12}>
+              <SidePanel.Actions
+                title="Recent Actions"
+                items={[
+                  {
+                    name: "SEND NEW INVOICE",
+                    description: "Collect 50% of Anwar event invoice",
+                    date: " 01/02/2021 10:00 EST ",
+                  },
+                ]}
+              />
+            </Col>
+            <Col xs={12}>
+              <SidePanel.Links
+                title="Related Reports"
+                items={[
+                  {
+                    title: "Statements of Account",
+                    link: "/",
+                  },
+                ]}
+              />
+            </Col>
+          </Row>
+        </Col>
       </Row>
     </div>
   );

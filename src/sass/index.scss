@@ -10,43 +10,50 @@
 @import "~bootstrap/scss/mixins";
 @import "./bootstrap-override";
 
-.reports-card .card-header {
+.links-card,
+.actions-card {
+  min-height: 180px !important;
+  .card-header {
     border-radius: 0 !important;
-}
-
-.container {
-    min-width: calc(100vw - 80px) !important;
-    width: calc(100vw - 80px) !important;
-    max-width: calc(100vw - 80px) !important;
+  }
 }
 
 .table-pagination-item {
-    .page-link {
-        border-radius: 2px !important;
-        border-width: 0 !important;
-        padding: 0 8px;
-        color: inherit !important;
-    }
+  background-color: transparent !important;
+  * {
+    background-color: transparent !important;
+  }
+  .page-link {
+    border-radius: 2px !important;
+    border-width: 1px !important;
+    border-color: transparent;
+    padding: 0 8px;
+    color: inherit !important;
+  }
 
-    &.active .page-link {
-        border-radius: 2px !important;
-        border-width: 1px !important;
-        background-color: transparent;
-        border-color: theme-color("primary");
-
-    }
+  &.active .page-link {
+    border-radius: 2px !important;
+    border-width: 1px !important;
+    border-color: theme-color("primary");
+  }
 }
 
 .nav-tabs {
-    .nav-item {
-        .underline-active-tap.active,
-        .underline-active-tap:hover {
-            border: 0px;
-
-            p {
-
-                border-bottom: 2px solid theme-color("primary") !important;
-            }
-        }
+  .nav-item {
+    .underline-active-tap {
+      border: 0px;
+      p {
+        border-bottom: 5px solid transparent !important;
+        margin-bottom: -2px !important;
+      }
     }
+    .underline-active-tap.active,
+    .underline-active-tap:hover {
+      border: 0px;
+
+      p {
+        border-bottom: 5px solid theme-color("primary") !important;
+      }
+    }
+  }
 }

@@ -15,7 +15,7 @@ const Home = () => {
       <section>
         <Container>
           <Row className="justify-content-between g-4">
-            <Col xl={8} lg={8} xs={12}>
+            <Col xl={7} lg={8} xs={12}>
               <Row className="g-4 mb-5">
                 <Col xs={6}>
                   <Cards.Icon
@@ -62,14 +62,26 @@ const Home = () => {
               <Row>
                 <Col xs={6}>
                   <Cards.Links
-                    title="Due Follow-Up"
+                    title="Settings & Preferences"
                     items={[
                       {
-                        text: "Invoices with standing balance",
+                        text: "Change login settings",
                         link: "/",
                       },
                       {
-                        text: "Invoices with standing balance",
+                        text: "Set and Edit User Permissions",
+                        link: "/",
+                      },
+                      {
+                        text: "Notification Preferences",
+                        link: "/",
+                      },
+                      {
+                        text: "Update your account information",
+                        link: "/",
+                      },
+                      {
+                        text: "Master settings",
                         link: "/",
                       },
                     ]}
@@ -79,7 +91,7 @@ const Home = () => {
             </Col>
             <Col xl={3} lg={4} xs={12} className="d-none d-lg-block">
               <Row className="g-4">
-                <Col xl={12} xs={6}>
+                <Col xs={12}>
                   <SidePanel.Actions
                     title="Due Follow-Up"
                     items={[
@@ -96,18 +108,13 @@ const Home = () => {
                     ]}
                   />
                 </Col>
-                <Col xl={12} xs={6}>
+                <Col xs={12}>
                   <SidePanel.Actions
                     title="Due Follow-Up"
                     items={[
                       {
-                        name: "INN TOURS & TRAVEL",
-                        description: "Collect 50% of Anwar event invoice",
-                        date: " 01/02/2021 10:00 EST ",
-                      },
-                      {
-                        name: "INN TOURS & TRAVEL",
-                        description: "Collect 50% of Anwar event invoice",
+                        name: "SEND NEW INVOICE",
+                        description: "Invoice #25147 / Inn Tours & Travel",
                         date: " 01/02/2021 10:00 EST ",
                       },
                     ]}
