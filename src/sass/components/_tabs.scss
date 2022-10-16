@@ -1,0 +1,22 @@
+.nav-tabs {
+    .nav-item {
+      .underline-active-tap {
+        border: 0px;
+  
+        p {
+          border-bottom: 5px solid transparent !important;
+          margin-bottom: -2px !important;
+        }
+      }
+  
+      .underline-active-tap.active,
+      .underline-active-tap:hover {
+        border: 0px;
+  
+        p {
+          border-bottom: 5px solid theme-color("primary") !important;
+        }
+      }
+    }
+  }
+  

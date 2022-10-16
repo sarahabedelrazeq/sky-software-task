@@ -1,0 +1,21 @@
+.table-pagination-item {
+    background-color: transparent !important;
+
+    * {
+        background-color: transparent !important;
+    }
+
+    .page-link {
+        border-radius: 2px !important;
+        border-width: 1px !important;
+        border-color: transparent;
+        padding: 0 8px;
+        color: inherit !important;
+    }
+
+    &.active .page-link {
+        border-radius: 2px !important;
+        border-width: 1px !important;
+        border-color: theme-color("primary");
+    }
+}

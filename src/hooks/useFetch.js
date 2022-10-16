@@ -3,14 +3,6 @@ import axios from "axios";
 import { API_URL } from "constants";
 import useLanguage from "./useLanguage";
 
-/**
- *
- * ========= USAGE =========
- *
- * In your component
- * const [response, request] = useFetch({endpoint: '/getPublicPages'})
- */
-
 const useFetch = (
   options = {
     endpoint: "",

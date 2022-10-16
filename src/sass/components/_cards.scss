@@ -1,0 +1,14 @@
+.links-card,
+.actions-card {
+  min-height: 180px !important;
+
+  .card-header {
+    border-radius: 0 !important;
+  }
+}
+
+.icon-card {
+  height: 116px;
+  min-height: 116px;
+  max-height: 116px;
+}

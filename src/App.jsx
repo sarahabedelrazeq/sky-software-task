@@ -1,29 +1,11 @@
 import { ErrorBoundary, Fallback } from "components";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import routes from "routes";
 import { useLanguage, useTheme } from "./hooks";
 import "./sass/index.scss";
 
-const routes = [
-  {
-    path: "/",
-    exact: true,
-    name: "Home",
-    component: React.lazy(() => import("pages/Home")),
-  },
-  {
-    path: "/company-profiles",
-    exact: true,
-    name: "Company Profiles",
-    component: React.lazy(() => import("pages/CompanyProfiles")),
-  },
-  {
-    path: "/company-profile/:company",
-    exact: true,
-    name: "CompanyProfile",
-    component: React.lazy(() => import("pages/CompanyProfile")),
-  },
-];
+
 
 function App() {
   const language = useLanguage();
