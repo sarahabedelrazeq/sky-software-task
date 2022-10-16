@@ -11,6 +11,12 @@ const routes = [
     name: "Home",
     component: React.lazy(() => import("pages/Home")),
   },
+  {
+    path: "/company-profiles",
+    exact: true,
+    name: "Company Profiles",
+    component: React.lazy(() => import("pages/CompanyProfiles")),
+  },
 ];
 
 function App() {

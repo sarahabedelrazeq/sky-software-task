@@ -87,7 +87,7 @@ export default function Main({ id, children, breadcrumb }) {
         </section>
       )}
       {breadcrumb && (
-        <section id="phone-search-section" className="d-lg-none mb-4">
+        <section id="phone-search-section" className="d-lg-none">
           <Container>
             <Row className="align-items-end">
               <Col xs={12} className="d-flex gap-4 justify-content-end">
