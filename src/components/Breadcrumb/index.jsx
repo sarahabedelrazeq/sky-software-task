@@ -27,14 +27,14 @@ export default function Breadcrumb({ breadcrumb, textClassName }) {
               >
                 {breadcrumb[breadcrumb.length - 1].title
                   .split(" ")
-                  .map((word) => {
+                  .map((word, index) => {
                     const chars = word.split("");
                     console.log(chars);
                     return (
-                      <>
+                      <React.Fragment key={index}>
                         <span className="fs-2">{chars[0]}</span>
                         {chars.slice(1, chars.length).join("")}{" "}
-                      </>
+                      </React.Fragment>
                     );
                   })}
               </h2>

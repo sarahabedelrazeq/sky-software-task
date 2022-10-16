@@ -17,6 +17,12 @@ const routes = [
     name: "Company Profiles",
     component: React.lazy(() => import("pages/CompanyProfiles")),
   },
+  {
+    path: "/company-profile/:company",
+    exact: true,
+    name: "CompanyProfile",
+    component: React.lazy(() => import("pages/CompanyProfile")),
+  },
 ];
 
 function App() {
@@ -40,11 +46,11 @@ function App() {
           }
         >
           <Routes basename="/">
-            {routes.map((route, idx) => {
+            {routes.map((route, index) => {
               return (
                 route.component && (
                   <Route
-                    key={idx}
+                    key={index}
                     path={route.path}
                     exact={route.exact}
                     name={route.name}
