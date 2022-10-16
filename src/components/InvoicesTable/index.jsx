@@ -1,6 +1,7 @@
 import classNames from "classnames";
+import { Pagination } from "components";
 import React from "react";
-import { Table, Pagination, Row, Col, Button } from "react-bootstrap";
+import { Table, Row, Col, Button } from "react-bootstrap";
 import {
   CardList,
   ChevronLeft,
@@ -32,16 +33,16 @@ export default function InvoicesTable({ invoices, setDownload }) {
               <h6 className="text-white fs-5">Invoice</h6>
             </th>
 
-            <th>
+            <th className="d-none d-md-table-cell">
               <h6 className="text-white fs-5"> </h6>
             </th>
-            <th>
+            <th className="d-none d-md-table-cell">
               <h6 className="text-white fs-5">Amount </h6>
             </th>
-            <th>
+            <th className="d-none d-md-table-cell">
               <h6 className="text-white fs-5">Remaining</h6>
             </th>
-            <th>
+            <th className="d-none d-md-table-cell">
               <h6 className="text-white fs-5"> </h6>
             </th>
           </tr>
@@ -59,7 +60,85 @@ export default function InvoicesTable({ invoices, setDownload }) {
                     className="border border-3 border-white align-middle"
                     key={index}
                   >
-                    <td>
+                    <td className="d-md-none">
+                      <Row>
+                        <Col xs={12}>
+                          <p className="fs-xs text-gray">{date}</p>
+                        </Col>
+                        <Col xs={12} className="mb-1">
+                          <p className="fs-6 text-gray-4">
+                            <span className="text-black fw-normal fs-6">
+                              INV#{id}: {name} -{" "}
+                            </span>
+                            <span className="d">
+                              {status === -1 ? (
+                                <Button
+                                  className="fs-xs text-white py-0 px-2"
+                                  style={{ width: 80 }}
+                                  variant="red"
+                                >
+                                  Issued
+                                </Button>
+                              ) : status === 1 ? (
+                                <Button
+                                  className="fs-xs text-white py-0 px-2"
+                                  style={{ width: 80 }}
+                                  variant="primary"
+                                >
+                                  Submitted
+                                </Button>
+                              ) : (
+                                <Button
+                                  className="fs-xs text-white py-0 px-2"
+                                  style={{ width: 80 }}
+                                  variant="green"
+                                >
+                                  Paid
+                                </Button>
+                              )}
+                              <br />
+                            </span>
+                          </p>
+                        </Col>
+                        <Col xs={12} className="mb-2">
+                          <p className="fs-6 text-gray-1">
+                            Folio #, {folio}
+                            {note}
+                          </p>
+                        </Col>
+                        <Col xs={4} className="mb-2">
+                          <p className="text-gray text-center">Amount</p>
+                          <p className="text-center">{amount} USD</p>
+                        </Col>
+                        <Col xs={4} className="mb-2">
+                          <p className="text-gray text-center">Remaining</p>
+                          <p className="text-center">{remaining} USD</p>
+                        </Col>
+                        <Col xs={12} className="mb-2">
+                          <ul className="d-flex list-unstyled gap-1 m-0 p-0 align-items-center">
+                            <li onClick={setDownload}>
+                              <Button variant="text" className="p-0 border-0">
+                                <Download className="fs-4" />
+                              </Button>
+                            </li>
+                            <li>
+                              <SendFill className="fs-5" />
+                            </li>
+                            <li>
+                              <Link45deg className="fs-4" />
+                            </li>
+                            <li>
+                              <Flag className="fs-4" />
+                            </li>
+                            <li>
+                              <CardList className="fs-4" />
+                            </li>
+                          </ul>
+                        </Col>
+                      </Row>
+                    </td>
+                    <td className="d-none d-md-table-cell" style={{ minWidth: 300 }}>
+                      {" "}
                       <div>
                         <p className="fs-xs text-gray">{date}</p>
                         <p className="text-gray-4">
@@ -71,7 +150,7 @@ export default function InvoicesTable({ invoices, setDownload }) {
                         <p className="text-gray-1">{note}</p>
                       </div>
                     </td>
-                    <td>
+                    <td className="d-none d-md-table-cell">
                       {status === -1 ? (
                         <Button
                           className="fs-xs text-white py-0"
@@ -98,16 +177,16 @@ export default function InvoicesTable({ invoices, setDownload }) {
                         </Button>
                       )}
                     </td>
-                    <td>
+                    <td className="d-none d-md-table-cell">
                       <p className="fs-5">{amount} USD</p>
                     </td>
-                    <td>
+                    <td className="d-none d-md-table-cell">
                       <p className="fs-5">{remaining} USD</p>
                     </td>
-                    <td>
+                    <td className="d-none d-md-table-cell">
                       <ul className="d-flex list-unstyled gap-2 justify-content-end m-0 align-items-center">
                         <li onClick={setDownload}>
-                          <Button variant="text">
+                          <Button variant="text" className="p-0 border-0">
                             <Download className="fs-4" />
                           </Button>
                         </li>
@@ -130,100 +209,14 @@ export default function InvoicesTable({ invoices, setDownload }) {
               )}
         </tbody>
       </Table>
-      <div className="border-top border-bottom border-gray-2 py-2 px-3">
-        <Row>
-          <Col xs={6}>
-            <Pagination>
-              <Pagination.Item
-                active={limit === 5}
-                onClick={() => setLimit(5)}
-                className="table-pagination-item text-black"
-              >
-                5
-              </Pagination.Item>
-              <Pagination.Item
-                active={limit === 20}
-                onClick={() => setLimit(20)}
-                className="table-pagination-item text-black"
-              >
-                20
-              </Pagination.Item>
-              <Pagination.Item
-                active={limit === 50}
-                onClick={() => setLimit(50)}
-                className="table-pagination-item text-black"
-              >
-                50
-              </Pagination.Item>
-            </Pagination>
-          </Col>
-          <Col xs={3}>
-            <p>
-              Page {page} of 1 ({invoices?.length} items)
-            </p>
-          </Col>
-          <Col xs={3}>
-            <Pagination>
-              <Pagination.Item
-                disabled={page === 1}
-                className={classNames("table-pagination-item", {
-                  "text-gray": page === 1,
-                  "text-black": page !== 1,
-                })}
-                onClick={() => setPage((prev) => prev - 1)}
-              >
-                <ChevronLeft />
-              </Pagination.Item>
-              {pagesCount <= 5 ? (
-                Array(pagesCount)
-                  .fill(0)
-                  .map((_, index) => (
-                    <Pagination.Item
-                      active={index === page - 1}
-                      className="table-pagination-item text-black"
-                      onClick={() => setPage(index + 1)}
-                      key={index}
-                    >
-                      {index + 1}
-                    </Pagination.Item>
-                  ))
-              ) : (
-                <>
-                  {page !== 1 && (
-                    <Pagination.Ellipsis
-                      disabled
-                      className="table-pagination-item text-black"
-                    />
-                  )}
-                  <Pagination.Item
-                    active
-                    className="table-pagination-item text-black"
-                    onClick={() => setPage(page)}
-                  >
-                    {page}
-                  </Pagination.Item>
-                  {page !== pagesCount && (
-                    <Pagination.Ellipsis
-                      disabled
-                      className="table-pagination-item text-black"
-                    />
-                  )}
-                </>
-              )}
-              <Pagination.Item
-                disabled={page === pagesCount}
-                className={classNames("table-pagination-item", {
-                  "text-gray": page === pagesCount,
-                  "text-black": page !== pagesCount,
-                })}
-                onClick={() => setPage((prev) => prev + 1)}
-              >
-                <ChevronRight />
-              </Pagination.Item>
-            </Pagination>
-          </Col>
-        </Row>
-      </div>
+      <Pagination
+        limit={limit}
+        setLimit={setLimit}
+        page={page}
+        setPage={setPage}
+        total={invoices?.length}
+        pagesCount={pagesCount}
+      />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import SidePanel from "./SidePanel";
 import Breadcrumb from "./Breadcrumb";
 import CompanyProfileForm from "./CompanyProfileForm";
 import InvoicesTable from "./InvoicesTable";
+import Pagination from "./Pagination";
 
 export {
   Footer,
@@ -22,4 +23,5 @@ export {
   Breadcrumb,
   CompanyProfileForm,
   InvoicesTable,
+  Pagination,
 };

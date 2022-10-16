@@ -25,7 +25,7 @@ export default function Main({ id, children, breadcrumb }) {
     <div id="main-layout" className="layout" style={{ background: theme.bg }}>
       <Header />
       {breadcrumb && (
-        <section className="bg-secondary pt-4 pb-3">
+        <section id="breadcrumb-section" className="bg-secondary pt-4 pb-3 mb-4">
           <Container>
             <Row className="align-items-end">
               <Col lg={4} xs={12}>
@@ -34,7 +34,11 @@ export default function Main({ id, children, breadcrumb }) {
                   breadcrumb={breadcrumb}
                 />
               </Col>
-              <Col lg={8} xs={12} className="d-none d-lg-flex gap-4 justify-content-end">
+              <Col
+                lg={8}
+                xs={12}
+                className="d-none d-lg-flex gap-4 justify-content-end"
+              >
                 <div>
                   <ButtonGroup aria-label="Basic example">
                     <Button variant="white" className="tex-primary bg-white">
@@ -82,8 +86,44 @@ export default function Main({ id, children, breadcrumb }) {
           </Container>
         </section>
       )}
-
-      <div className="page-container pt-5" id={id ? id : "page"}>
+      {breadcrumb && (
+        <section id="phone-search-section" className="d-lg-none mb-4">
+          <Container>
+            <Row className="align-items-end">
+              <Col xs={12} className="d-flex gap-4 justify-content-end">
+                <div>
+                  <ButtonGroup aria-label="Basic example" className=" border border-gray-2">
+                    <Button variant="white" className="tex-primary bg-white">
+                      <span>
+                        <ThreeDotsVertical className="fs-4 text-gray" />
+                      </span>
+                    </Button>
+                  </ButtonGroup>
+                </div>
+                <div className="w-100">
+                  <Form>
+                    <InputGroup className="bg-white rounded border border-gray-2 px-3">
+                      <InputGroup.Text
+                        className="bg-white border-0 p-2"
+                        id="search"
+                      >
+                        <Search className="fs-4 text-gray" />
+                      </InputGroup.Text>
+                      <Form.Control
+                        placeholder="Search..."
+                        aria-label="search"
+                        aria-describedby="search"
+                        className="bg-white border-0"
+                      />
+                    </InputGroup>
+                  </Form>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </section>
+      )}
+      <div className="page-container pb-5 pt-2" id={id ? id : "page"}>
         {children}
       </div>
       <Footer />

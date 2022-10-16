@@ -12,7 +12,7 @@ import {
 export default function Home() {
   return (
     <Main id="home_page">
-      <section>
+      <section id="home-section">
         <Container>
           <Row className="justify-content-between g-4">
             <Col xl={7} lg={8} xs={12}>

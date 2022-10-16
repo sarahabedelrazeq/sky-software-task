@@ -21,7 +21,7 @@ export default function CompanyProfiles() {
         { link: "/company-profiles", title: "Company Profiles" },
       ]}
     >
-      <section>
+      <section id="company-profiles-section">
         <Container>
           <Row className="justify-content-between g-4">
             <Col xl={9} lg={8} xs={12}>

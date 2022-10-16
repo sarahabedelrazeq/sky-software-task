@@ -10,7 +10,7 @@ export default function CompanyProfile() {
 
   return (
     <Main
-      id="company-profiles_page"
+      id="company-profile_page"
       breadcrumb={
         company && [
           { link: "/", title: "Home" },
@@ -19,7 +19,7 @@ export default function CompanyProfile() {
         ]
       }
     >
-      <section>
+      <section id="company-profile-section">
         <Container>
           <Row className="justify-content-between g-4">
             <Col xs={12}>

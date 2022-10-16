@@ -7,7 +7,7 @@ export default function Profile() {
   return (
     <div>
       <Row className="justify-content-between g-4">
-        <Col lg={9} xs={12}>
+        <Col xl={9} lg={8} xs={12}>
           <div className="bg-gray-3 p-3 pb-4">
             <Row>
               <Col xs={12}>

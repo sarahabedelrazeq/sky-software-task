@@ -18,7 +18,7 @@ export default function Invoices() {
   return (
     <div>
       <Row className="justify-content-between g-4">
-        <Col lg={9} xs={12}>
+        <Col xl={9} lg={8} xs={12}>
           <InvoicesTable
             setDownload={() => setDownload(true)}
             invoices={invoices.data}
