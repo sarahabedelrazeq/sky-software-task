@@ -1,0 +1,32 @@
+[
+  {
+    "id": 14532,
+    "date": "30/10/2021",
+    "name": "HUSSAM AL-KHALD",
+    "note": "Additional notes on the invoice (i.e. the supplement)",
+    "amount": "10,000",
+    "remaining": "10,000",
+    "status": -1,
+    "folio": 1254
+  },
+  {
+    "id": 14532,
+    "date": "30/10/2021",
+    "name": "HUSSAM AL-KHALD",
+    "note": "Additional notes on the invoice (i.e. the supplement)",
+    "amount": "10,000",
+    "remaining": "10,000",
+    "status": 1,
+    "folio": 1254
+  },
+  {
+    "id": 14532,
+    "date": "30/10/2021",
+    "name": "HUSSAM AL-KHALD",
+    "note": "Additional notes on the invoice (i.e. the supplement)",
+    "amount": "10,000",
+    "remaining": "10,000",
+    "status": 2,
+    "folio": 1254
+  }
+]
