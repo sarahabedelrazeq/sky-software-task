@@ -10,6 +10,23 @@ button,
   transition: all 250ms ease;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+input,
+button,
+select,
+optgroup,
+textarea {
+  font-weight: 400;
+}
+
 .form-control {
   &:focus {
     border-color: theme-color(primary) !important;
@@ -27,45 +44,6 @@ button,
   }
 }
 
-.svg-fill {
-  fill: theme-color(light3);
-
-  * {
-    fill: theme-color(light3);
-  }
-
-  &-light4 {
-    fill: theme-color(light4);
-
-    * {
-      fill: theme-color(light4);
-    }
-  }
-
-  &-primary {
-    fill: theme-color(primary);
-
-    * {
-      fill: theme-color(primary);
-    }
-  }
-
-  &-black {
-    fill: theme-color("black");
-
-    * {
-      fill: theme-color("black");
-    }
-  }
-
-  &-white {
-    fill: white;
-
-    * {
-      fill: white;
-    }
-  }
-}
 
 *:focus-visible {
   outline: inset !important;

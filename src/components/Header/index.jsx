@@ -1,10 +1,16 @@
 import { SideBar } from "components";
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Grid3x3, List, Person, Power, SquareFill } from "react-bootstrap-icons";
+import {
+  Grid3x3,
+  List,
+  Person,
+  Power,
+  SquareFill,
+} from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+export default function Header() {
   const [show, setShow] = React.useState(false);
   return (
     <header className="bg-secondary-dark py-2">
@@ -67,6 +73,4 @@ const Header = () => {
       </Container>
     </header>
   );
-};
-
-export default Header;
+}

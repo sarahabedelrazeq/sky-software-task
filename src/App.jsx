@@ -18,7 +18,7 @@ function App() {
   const theme = useTheme();
 
   React.useLayoutEffect(() => {
-    document.documentElement.setAttribute("lang", language.lang);
+    document.documentElement.setAttribute("lang", language.direction);
     document.documentElement.setAttribute("dir", language.direction);
     document.documentElement.setAttribute("class", "theme-" + theme.name);
   }, [language, theme]);

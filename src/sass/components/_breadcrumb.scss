@@ -1,0 +1,9 @@
+.breadcrumb-component {
+    .breadcrumb-item {
+        padding: 0;
+
+        &::before {
+            content: none
+        }
+    }
+}

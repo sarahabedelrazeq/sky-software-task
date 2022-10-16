@@ -9,3 +9,51 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 @import "./bootstrap-override";
+
+.links-card,
+.actions-card {
+  min-height: 180px !important;
+  .card-header {
+    border-radius: 0 !important;
+  }
+}
+
+.table-pagination-item {
+  background-color: transparent !important;
+  * {
+    background-color: transparent !important;
+  }
+  .page-link {
+    border-radius: 2px !important;
+    border-width: 1px !important;
+    border-color: transparent;
+    padding: 0 8px;
+    color: inherit !important;
+  }
+
+  &.active .page-link {
+    border-radius: 2px !important;
+    border-width: 1px !important;
+    border-color: theme-color("primary");
+  }
+}
+
+.nav-tabs {
+  .nav-item {
+    .underline-active-tap {
+      border: 0px;
+      p {
+        border-bottom: 5px solid transparent !important;
+        margin-bottom: -2px !important;
+      }
+    }
+    .underline-active-tap.active,
+    .underline-active-tap:hover {
+      border: 0px;
+
+      p {
+        border-bottom: 5px solid theme-color("primary") !important;
+      }
+    }
+  }
+}
