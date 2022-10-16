@@ -123,7 +123,7 @@ export default function Main({ id, children, breadcrumb }) {
           </Container>
         </section>
       )}
-      <div className="page-container pb-5 pt-2" id={id ? id : "page"}>
+      <div className="page-container pb-5 pt-4" id={id ? id : "page"}>
         {children}
       </div>
       <Footer />
