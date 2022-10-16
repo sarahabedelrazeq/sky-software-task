@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import React from "react";
-import { Table, Pagination, Row, Col } from "react-bootstrap";
+import { Table, Pagination, Row, Col, Button } from "react-bootstrap";
 import {
   CardList,
   ChevronLeft,
@@ -10,17 +10,17 @@ import {
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
-export default function CompaniesTable({ companies }) {
+export default function InvoicesTable({ invoices }) {
   const [limit, setLimit] = React.useState(20);
   const [page, setPage] = React.useState(1);
   const [pagesCount, setPagesCount] = React.useState(1);
 
   React.useEffect(() => {
     const pagesCount = Math.ceil(
-      companies?.length ? companies.length / limit : 0
+      invoices?.length ? invoices.length / limit : 0
     );
     setPagesCount(pagesCount);
-  }, [limit, companies]);
+  }, [limit, invoices]);
 
   return (
     <div className="bg-gray-3">
@@ -28,64 +28,97 @@ export default function CompaniesTable({ companies }) {
         <thead className="bg-secondary">
           <tr>
             <th>
-              <h6 className="text-white fs-5">Company</h6>
+              <h6 className="text-white fs-5">Invoice</h6>
+            </th>
+
+            <th>
+              <h6 className="text-white fs-5"> </h6>
             </th>
             <th>
-              <h6 className="text-white fs-5">Credit Limit </h6>
+              <h6 className="text-white fs-5">Amount </h6>
             </th>
             <th>
-              <h6 className="text-white fs-5">Balance</h6>
+              <h6 className="text-white fs-5">Remaining</h6>
             </th>
             <th>
               <h6 className="text-white fs-5"> </h6>
             </th>
           </tr>
         </thead>
-        <tbody className="bg-gray-3 h-100">
-          {companies &&
-            companies
+        <tbody className="h-100">
+          {invoices &&
+            invoices
               .slice(limit * page - limit, limit * page)
-              .map(({ id, name, address, contact, limit, balance }, index) => (
-                <tr
-                  className="border border-3 border-white align-middle"
-                  key={index}
-                >
-                  <td>
-                    <p className="fs-xs text-gray">Travel Agent</p>
-                    <p className="text-gray-4">
-                      <span className="text-black">
-                        A/R#{id}: {name}
-                      </span>
-                      - {address}
-                    </p>
-                    <p className="text-gray-1">
-                      contact: {contact.join(", ")}{" "}
-                    </p>
-                    <Link to={`/company-profile/${name}`} className="text-blue">
-                      Edit
-                    </Link>
-                  </td>
-                  <td>
-                    <p className="fs-5">{limit} USD</p>
-                  </td>
-                  <td>
-                    <p className="fs-5">{balance} USD</p>
-                  </td>
-                  <td>
-                    <ul className="d-flex list-unstyled gap-2 justify-content-end m-0 align-items-center">
-                      <li>
-                        <BootstrapLinkIcon className="fs-4" />
-                      </li>
-                      <li>
-                        <Flag className="fs-5" />
-                      </li>
-                      <li>
-                        <CardList className="fs-4" />
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              ))}
+              .map(
+                (
+                  { id, date, name, note, amount, remaining, status, folio },
+                  index
+                ) => (
+                  <tr
+                    className="border border-3 border-white align-middle"
+                    key={index}
+                  >
+                    <td>
+                      <div>
+                        <p className="fs-xs text-gray">{date}</p>
+                        <p className="text-gray-4">
+                          <span className="text-black fw-normal">
+                            INV#{id}: {name}
+                          </span>
+                          - Folio #{folio}
+                        </p>
+                        <p className="text-gray-1">{note}</p>
+                      </div>
+                    </td>
+                    <td>
+                      {status === -1 ? (
+                        <Button
+                          className="fs-xs text-white py-0"
+                          style={{ width: 100 }}
+                          variant="red"
+                        >
+                          Issued
+                        </Button>
+                      ) : status === 1 ? (
+                        <Button
+                          className="fs-xs text-white py-0"
+                          style={{ width: 100 }}
+                          variant="primary"
+                        >
+                          Submitted
+                        </Button>
+                      ) : (
+                        <Button
+                          className="fs-xs text-white py-0"
+                          style={{ width: 100 }}
+                          variant="green"
+                        >
+                          Paid
+                        </Button>
+                      )}
+                    </td>
+                    <td>
+                      <p className="fs-5">{amount} USD</p>
+                    </td>
+                    <td>
+                      <p className="fs-5">{remaining} USD</p>
+                    </td>
+                    <td>
+                      <ul className="d-flex list-unstyled gap-2 justify-content-end m-0 align-items-center">
+                        <li>
+                          <BootstrapLinkIcon className="fs-4" />
+                        </li>
+                        <li>
+                          <Flag className="fs-5" />
+                        </li>
+                        <li>
+                          <CardList className="fs-4" />
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                )
+              )}
         </tbody>
       </Table>
       <div className="border-top border-bottom border-gray-2 py-2 px-3">
@@ -117,7 +150,7 @@ export default function CompaniesTable({ companies }) {
           </Col>
           <Col xs={3}>
             <p>
-              Page {page} of 1 ({companies?.length} items)
+              Page {page} of 1 ({invoices?.length} items)
             </p>
           </Col>
           <Col xs={3}>

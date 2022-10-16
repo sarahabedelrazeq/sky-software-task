@@ -7,6 +7,8 @@ import Cards from "./Cards";
 import CompaniesTable from "./CompaniesTable";
 import SidePanel from "./SidePanel";
 import Breadcrumb from "./Breadcrumb";
+import CompanyProfileForm from "./CompanyProfileForm";
+import InvoicesTable from "./InvoicesTable";
 
 export {
   Footer,
@@ -18,4 +20,6 @@ export {
   SidePanel,
   CompaniesTable,
   Breadcrumb,
+  CompanyProfileForm,
+  InvoicesTable,
 };

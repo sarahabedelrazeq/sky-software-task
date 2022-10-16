@@ -35,7 +35,7 @@ export default function CompanyProfile() {
                   title={<p className="px-5">Profile</p>}
                 >
                   <div className="pt-3">
-                  <Profile />
+                    <Profile />
                   </div>
                 </Tab>
                 <Tab
@@ -43,7 +43,9 @@ export default function CompanyProfile() {
                   tabClassName="underline-active-tap"
                   title={<p className="px-5">Invoices</p>}
                 >
-                  <Invoices />
+                  <div className="pt-3">
+                    <Invoices />
+                  </div>
                 </Tab>
               </Tabs>
             </Col>
