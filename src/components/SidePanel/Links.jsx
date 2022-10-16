@@ -1,7 +1,7 @@
 import { Card, ListGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function Links({ title, items }) {
+export default function Links({ title, items }) {
   return (
     <Card className="rounded-0 links-card d-flex">
       <Card.Header className="bg-secondary text-white fs-5 rounded-0 d-flex justify-content-between mb-1">
@@ -20,5 +20,3 @@ function Links({ title, items }) {
     </Card>
   );
 }
-
-export default Links;

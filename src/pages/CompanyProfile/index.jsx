@@ -1,4 +1,3 @@
-import { SidePanel } from "components";
 import { Main } from "components/Layouts";
 import React from "react";
 import { Col, Container, Row, Tab, Tabs } from "react-bootstrap";

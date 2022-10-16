@@ -9,7 +9,7 @@ import {
   Reception3,
 } from "react-bootstrap-icons";
 
-const Home = () => {
+export default function Home() {
   return (
     <Main id="home_page">
       <section>
@@ -127,6 +127,4 @@ const Home = () => {
       </section>
     </Main>
   );
-};
-
-export default Home;
+}

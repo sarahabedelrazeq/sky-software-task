@@ -6,7 +6,7 @@ import {
 } from "react-bootstrap-icons";
 import { Link } from "react-router-dom";
 
-function Actions({ items, title }) {
+export default function Actions({ items, title }) {
   return (
     <Card className="rounded-0 actions-card d-flex">
       <Card.Header className="bg-secondary text-white fs-5 rounded-0 d-flex justify-content-between mb-1">
@@ -51,4 +51,3 @@ function Actions({ items, title }) {
   );
 }
 
-export default Actions;

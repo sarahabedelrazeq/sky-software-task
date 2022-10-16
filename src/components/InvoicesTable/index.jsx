@@ -11,7 +11,7 @@ import {
   SendFill,
 } from "react-bootstrap-icons";
 
-export default function InvoicesTable({ invoices }) {
+export default function InvoicesTable({ invoices, setDownload }) {
   const [limit, setLimit] = React.useState(5);
   const [page, setPage] = React.useState(1);
   const [pagesCount, setPagesCount] = React.useState(1);
@@ -106,8 +106,10 @@ export default function InvoicesTable({ invoices }) {
                     </td>
                     <td>
                       <ul className="d-flex list-unstyled gap-2 justify-content-end m-0 align-items-center">
-                        <li>
-                          <Download className="fs-4" />
+                        <li onClick={setDownload}>
+                          <Button variant="text">
+                            <Download className="fs-4" />
+                          </Button>
                         </li>
                         <li>
                           <SendFill className="fs-5" />
