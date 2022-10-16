@@ -17,7 +17,7 @@ export default function Home() {
           <Row className="justify-content-between g-4">
             <Col xl={7} lg={8} xs={12}>
               <Row className="g-4 mb-5">
-                <Col xs={6}>
+                <Col sm={6} xs={12}>
                   <Cards.Icon
                     icon={<BagDashFill />}
                     count={76}
@@ -26,7 +26,7 @@ export default function Home() {
                     link="/company-profiles"
                   />
                 </Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12}>
                   <Cards.Icon
                     icon={<Receipt />}
                     count={0}
@@ -34,7 +34,7 @@ export default function Home() {
                     text="Invoices with standing balance"
                   />
                 </Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12}>
                   <Cards.Icon
                     icon={<FileEarmarkBarGraphFill />}
                     count={0}
@@ -42,7 +42,7 @@ export default function Home() {
                     text="Received payments & Settlments"
                   />
                 </Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12}>
                   <Cards.Icon
                     icon={<FileEarmarkBarGraphFill />}
                     count={0}
@@ -50,7 +50,7 @@ export default function Home() {
                     text="Invoice Aging"
                   />
                 </Col>
-                <Col xs={6}>
+                <Col sm={6} xs={12}>
                   <Cards.Icon
                     icon={<Reception3 />}
                     count={0}
@@ -60,7 +60,7 @@ export default function Home() {
                 </Col>
               </Row>
               <Row>
-                <Col xs={6}>
+                <Col sm={6} xs={12}>
                   <Cards.Links
                     title="Settings & Preferences"
                     items={[
