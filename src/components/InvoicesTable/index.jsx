@@ -1,11 +1,8 @@
-import classNames from "classnames";
 import { Pagination } from "components";
 import React from "react";
 import { Table, Row, Col, Button } from "react-bootstrap";
 import {
   CardList,
-  ChevronLeft,
-  ChevronRight,
   Download,
   Flag,
   Link45deg,
@@ -137,8 +134,10 @@ export default function InvoicesTable({ invoices, setDownload }) {
                         </Col>
                       </Row>
                     </td>
-                    <td className="d-none d-md-table-cell" style={{ minWidth: 300 }}>
-                      {" "}
+                    <td
+                      className="d-none d-md-table-cell"
+                      style={{ minWidth: 300 }}
+                    >
                       <div>
                         <p className="fs-xs text-gray">{date}</p>
                         <p className="text-gray-4">
