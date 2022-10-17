@@ -1,5 +1,5 @@
-import { useCallback, useState } from "react";
 import axios from "axios";
+import { useCallback, useState } from "react";
 import { API_URL } from "constants";
 import useLanguage from "./useLanguage";
 
@@ -15,14 +15,7 @@ const useFetch = (
     initialLoadingState: false,
   }
 ) => {
-  const {
-    endpoint,
-    method,
-    body,
-    params,
-    onSuccess,
-    onError,
-  } = options;
+  const { endpoint, method, body, params, onSuccess, onError } = options;
   const language = useLanguage();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -65,15 +58,7 @@ const useFetch = (
       .finally(() => {
         setLoading(false);
       });
-  }, [
-    method,
-    endpoint,
-    body,
-    params,
-    onSuccess,
-    onError,
-    language.code,
-  ]);
+  }, [method, endpoint, body, params, onSuccess, onError, language.code]);
 
   return [{ data, error, loading }, request];
 };

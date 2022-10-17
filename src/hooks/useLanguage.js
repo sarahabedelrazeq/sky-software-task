@@ -1,8 +1,9 @@
 import { ar, en } from "languages";
-import { useSelector } from "react-redux";
+import { useContext } from "react";
+import { ReactReduxContext } from "react-redux";
 
 export default function useLanguage() {
-  const language = useSelector((state) => state.app.language);
-
-  return language === "ar" ? ar : en;
+  const store = useContext(ReactReduxContext);
+  const state = store?.store?.getState();
+  return state?.app?.language === "ar" ? ar : en;
 }
