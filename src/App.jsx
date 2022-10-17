@@ -5,8 +5,6 @@ import routes from "routes";
 import { useLanguage, useTheme } from "./hooks";
 import "./sass/index.scss";
 
-
-
 function App() {
   const language = useLanguage();
   const theme = useTheme();

@@ -29,7 +29,6 @@ export default function Breadcrumb({ breadcrumb, textClassName }) {
                   .split(" ")
                   .map((word, index) => {
                     const chars = word.split("");
-                    console.log(chars);
                     return (
                       <React.Fragment key={index}>
                         <span className="fs-2">{chars[0]}</span>
